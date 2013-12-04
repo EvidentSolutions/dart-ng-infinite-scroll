@@ -4,6 +4,14 @@ import 'dart:async';
 import 'dart:html';
 import 'package:angular/angular.dart';
 
+/**
+ * Directive for infinite scrolling. Pass an expression which to be evaluated
+ * whenever the document is scrolled.
+ *
+ * ## Example
+ *
+ *     <div infinite-scroll="ctrl.loadMore()" infinite-scroll-disabled="ctrl.loading" infinite-scroll-distance="3"></div>
+ */
 @NgDirective(selector: "[infinite-scroll]",
 map: const {
     'infinite-scroll': '@exp',
@@ -63,6 +71,7 @@ class InfiniteScrollDirective implements NgDetachAware {
   }
 }
 
+/// Module which installs the infinite-scroll directive.
 class InfiniteScrollModule extends Module {
   InfiniteScrollModule() {
     type(InfiniteScrollDirective);
