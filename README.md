@@ -7,7 +7,7 @@ for [AngularDart](http://pub.dartlang.org/packages/angular).
 
 First, import the package and register the module:
 
-    import 'package:yoke/ng_infinite_scroll/ng_infinite_scroll.dart';
+    import 'package:ng_infinite_scroll/ng_infinite_scroll.dart';
 
     class MyModule extends Module {
         MyModule() {
