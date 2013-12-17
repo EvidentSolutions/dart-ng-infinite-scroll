@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html ng-app>
+<head>
+    <title>infinite scroll test</title>
+</head>
+<body test-app>
+
+<header style="position: fixed; background: #eee; top: 0; left: 0; right: 0; padding: 10px; border-bottom: 1px solid #ccc;">
+    Scroll this page to test that infinite scrolling works.
+    <label style="float: right"><input type="checkbox" ng-model="ctrl.disabled"> Disable scrolling</label>
+</header>
+
+<ul infinite-scroll="ctrl.loadMore()" infinite-scroll-disabled="ctrl.disabled" infinite-scroll-distance="3" style="margin-top: 50px">
+    <li ng-repeat="row in ctrl.rows" >{{row}}</li>
+</ul>
+
+<script type="application/dart">
+    import 'package:angular/angular.dart';
+    import 'package:ng_infinite_scroll/ng_infinite_scroll.dart';
+
+    @NgController(selector: "[test-app]", publishAs: "ctrl")
+    class TestController {
+        var rows = [];
+        var disabled = false;
+
+        void loadMore() {
+            for (var i = 0; i < 100; i++) {
+                rows.add("row ${rows.length}");
+            }
+        }
+    }
+
+    main() {
+        var module = new Module();
+        module.type(TestController);
+        module.install(new InfiniteScrollModule());
+        ngBootstrap(module: module);
+    }
+
+</script>
+<script src="packages/browser/dart.js"></script>
+</body>
+</html>
