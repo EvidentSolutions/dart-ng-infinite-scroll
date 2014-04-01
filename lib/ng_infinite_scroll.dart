@@ -59,7 +59,7 @@ class InfiniteScrollDirective implements NgDetachAware {
 
     if (shouldScroll) {
       if (_scrollEnabled) {
-        _scope.$eval(exp);
+        _scope.eval(exp);
       } else {
         _checkWhenEnabled = true;
       }
