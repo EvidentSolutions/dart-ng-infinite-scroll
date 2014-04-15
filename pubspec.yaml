@@ -1,8 +1,8 @@
 name: ng_infinite_scroll
-version: 0.0.3
+version: 0.0.4
 description: >
   Infinite Scrolling for AngularDart
 author: Juha Komulainen <juha.komulainen@evident.fi>
 homepage: https://bitbucket.org/evidentsolutions/dart-ng-infinite-scroll
 dependencies:
-  angular: ">=0.9.9 <0.9.11"
+  angular: ">=0.9.11 <0.9.12"
