@@ -12,14 +12,14 @@ import 'package:angular/angular.dart';
  *
  *     <div infinite-scroll="ctrl.loadMore()" infinite-scroll-disabled="ctrl.loading" infinite-scroll-distance="3"></div>
  */
-@NgDirective(selector: "[infinite-scroll]",
+@Decorator(selector: "[infinite-scroll]",
 map: const {
     'infinite-scroll': '@exp',
     'infinite-scroll-disabled': '=>scrollDisabled',
     'infinite-scroll-distance': '=>scrollDistance',
     'infinite-scroll-immediate-check': '=>immediateCheck'
 })
-class InfiniteScrollDirective implements NgDetachAware {
+class InfiniteScrollDirective implements DetachAware {
 
   final Scope _scope;
   final Element _element;
