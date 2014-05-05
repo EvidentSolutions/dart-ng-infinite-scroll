@@ -74,6 +74,6 @@ class InfiniteScrollDirective implements DetachAware {
 /// Module which installs the infinite-scroll directive.
 class InfiniteScrollModule extends Module {
   InfiniteScrollModule() {
-    type(InfiniteScrollDirective);
+    bind(InfiniteScrollDirective);
   }
 }
