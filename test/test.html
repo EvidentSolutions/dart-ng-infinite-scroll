@@ -34,7 +34,7 @@
 
     main() {
         var module = new Module();
-        module.type(TestController);
+        module.bind(TestController);
         module.install(new InfiniteScrollModule());
 
         applicationFactory()
