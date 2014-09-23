@@ -14,18 +14,17 @@ import 'package:angular/angular.dart';
  */
 @Decorator(selector: "[infinite-scroll]",
 map: const {
-    'infinite-scroll': '@exp',
+    'infinite-scroll': '&callback',
     'infinite-scroll-disabled': '=>scrollDisabled',
     'infinite-scroll-distance': '=>scrollDistance',
     'infinite-scroll-immediate-check': '=>immediateCheck'
 })
 class InfiniteScrollDirective implements DetachAware {
 
-  final Scope _scope;
   final Element _element;
   final Window _window;
 
-  String exp;
+  var callback;
   int scrollDistance = 0;
   bool immediateCheck = true;
 
@@ -42,7 +41,7 @@ class InfiniteScrollDirective implements DetachAware {
     }
   }
 
-  InfiniteScrollDirective(this._element, this._scope, this._window) {
+  InfiniteScrollDirective(this._element, this._window) {
     _sub = _window.onScroll.listen(_checkScrolled);
 
     scheduleMicrotask(() {
@@ -59,7 +58,7 @@ class InfiniteScrollDirective implements DetachAware {
 
     if (shouldScroll) {
       if (_scrollEnabled) {
-        _scope.eval(exp);
+        callback();
       } else {
         _checkWhenEnabled = true;
       }
