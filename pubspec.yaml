@@ -5,4 +5,4 @@ description: >
 author: Juha Komulainen <juha.komulainen@evident.fi>
 homepage: https://bitbucket.org/evidentsolutions/dart-ng-infinite-scroll
 dependencies:
-  angular: ">=0.12.0 <0.12.1"
+  angular: ">=0.13.0 <0.15.1"
