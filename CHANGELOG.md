@@ -1,3 +1,7 @@
+# v0.2.0 (2015-01-04)
+
+- Support (and require) Angular 1.x.
+
 # v0.1.2 (2014-09-23)
 
 - Map callbacks as bound expressions so that they don't get removed during tree shaking. 
