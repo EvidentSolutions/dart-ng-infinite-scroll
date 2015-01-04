@@ -1,0 +1,8 @@
+<header style="position: fixed; background: #eee; top: 0; left: 0; right: 0; padding: 10px; border-bottom: 1px solid #ccc;">
+    Scroll this page to test that infinite scrolling works.
+    <label style="float: right"><input type="checkbox" ng-model="disabled"> Disable scrolling</label>
+</header>
+
+<ul infinite-scroll="loadMore()" infinite-scroll-disabled="disabled" infinite-scroll-distance="3" style="margin-top: 50px">
+    <li ng-repeat="row in rows" >{{row}}</li>
+</ul>
